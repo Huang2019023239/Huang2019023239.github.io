@@ -8,7 +8,7 @@
       <link href="2021/05/25/hqc-blog/"/>
       <url>2021/05/25/hqc-blog/</url>
       
-        <content type="html"><![CDATA[<p>#本人最喜欢的一首诗</p><p>  春江花月夜（唐）张若虚</p><p>春江潮水连海平，海上明月共潮生。</p><p>滟滟随波千万里，何处春江无月明！</p><p>江流宛转绕芳甸，月照花林皆似霰；</p><p>空里流霜不觉飞，汀上白沙看不见。</p><p>江天一色无纤尘，皎皎空中孤月轮。</p><p>江畔何人初见月？江月何年初照人？</p><p>人生代代无穷已，江月年年望相似。</p><p>不知江月待何人，但见长江送流水。</p><p>白云一片去悠悠，青枫浦上不胜愁。</p><p>谁家今夜扁舟子？何处相思明月楼？</p><p>可怜楼上月裴回，应照离人妆镜台。</p><p>玉户帘中卷不去，捣衣砧上拂还来。</p><p>此时相望不相闻，愿逐月华流照君。</p><p>鸿雁长飞光不度，鱼龙潜跃水成文。</p><p>昨夜闲潭梦落花，可怜春半不还家。</p><p>江水流春去欲尽，江潭落月复西斜。</p><p>斜月沉沉藏海雾，碣石潇湘无限路。</p><p>不知乘月几人归，落月摇情满江树。</p>]]></content>
+        <content type="html"><![CDATA[<p>#本人最喜欢的一首诗</p><pre class="line-numbers language-none"><code class="language-none">    春江花月夜（唐）张若虚春江潮水连海平，海上明月共潮生。滟滟随波千万里，何处春江无月明！江流宛转绕芳甸，月照花林皆似霰；空里流霜不觉飞，汀上白沙看不见。江天一色无纤尘，皎皎空中孤月轮。江畔何人初见月？江月何年初照人？人生代代无穷已，江月年年望相似。不知江月待何人，但见长江送流水。白云一片去悠悠，青枫浦上不胜愁。谁家今夜扁舟子？何处相思明月楼？可怜楼上月裴回，应照离人妆镜台。玉户帘中卷不去，捣衣砧上拂还来。此时相望不相闻，愿逐月华流照君。鸿雁长飞光不度，鱼龙潜跃水成文。昨夜闲潭梦落花，可怜春半不还家。江水流春去欲尽，江潭落月复西斜。斜月沉沉藏海雾，碣石潇湘无限路。不知乘月几人归，落月摇情满江树。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       
@@ -23,11 +23,32 @@
     
     
     <entry>
+      <title>DIY 服务器配置</title>
+      <link href="2020/05/27/diy-deploy-server/"/>
+      <url>2020/05/27/diy-deploy-server/</url>
+      
+        <content type="html"><![CDATA[<p>#前提假设<br>组装电脑（4人用）：<br><br>基本配置需求如下：<br><br>内存DDR4 2400 32G<br><br>M.2接口固态 512G（用于存放程序和安装系统）<br><br>机械硬盘 7200转 1T（用于存放数据）<br><br>显卡 GTX 1650<br><br>CPU 英特尔 至强 E5-2680v4（这个4指的是支持DDR4）<br><br>主板华南金牌 X99-F8<br><br>机箱EATX型<br><br>cpu要3风扇<br><br>注：内存要匹配cpu，主板的最大支持频率</p><hr><p>#装机<br>1.使用<a href="https://rufus.ie/zh/">Rufus</a> 烧录centos7的iso镜像（DVD或者Everything那个，可选国内镜像）如<a href="http://mirrors.aliyun.com/centos/7/isos/x86_64/">阿里镜像</a> 和 <a href="https://developer.aliyun.com/mirror/">阿里云官方镜像</a> <br><br>2.u盘启动安装<br>3.网线/wifi联网(可以先ping看是否链接上网,右键桌面打开terminal输入)</p><pre class="line-numbers language-none"><code class="language-none">$ ping www.baidu.com <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>3.1 备份旧源（可选）：</p><pre class="line-numbers language-none"><code class="language-none">$ mkdir /etc/yum.repos.d/backup $ mv CentOS-Base.repo CentOS-Base.repo.old$ wget http://mirrors.aliyun.com/repo/Centos-7.repo$ wget  http://mirrors.aliyun.com/repo/epel-7.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>3.2 如果没有网就:</p><pre class="line-numbers language-none"><code class="language-none">$ yum update -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>4.连上网后先检查ifconfig查看IP地址</p><pre class="line-numbers language-none"><code class="language-none">$ ipconfig all$ yum install kernel-devel gcc -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Centos7 </tag>
+            
+            <tag> CUDA-CUDNN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>简历</title>
       <link href="2020/05/26/jian-li/"/>
       <url>2020/05/26/jian-li/</url>
       
-        <content type="html"><![CDATA[<h3 id="简历-necktie"><a href="#简历-necktie" class="headerlink" title="简历:necktie:"></a>简历<span class="github-emoji"><span>👔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f454.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h3><p><img src="http://www.peloop.top/img/Resume.png"></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="简历-necktie"><a href="#简历-necktie" class="headerlink" title="简历:necktie:"></a>简历<span class="github-emoji"><span>👔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f454.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h3><p><img src="http://www.peloop.top/img/Resume.png">       </p>]]></content>
       
       
       
